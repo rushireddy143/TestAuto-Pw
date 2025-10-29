@@ -1,0 +1,103 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run Playwright Tests",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"test"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "Run Playwright Tests (Headed)",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"test:headed"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Run Playwright Tests (Debug)",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"test:debug"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Run Playwright Tests (UI Mode)",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"test:ui"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Show Playwright Report",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"test:report"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Install Playwright Browsers",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"install:browsers"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Generate Playwright Code",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"codegen"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "TypeScript Check",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"tsc",
+				"--noEmit"
+			],
+			"isBackground": false,
+			"problemMatcher": ["$tsc"],
+			"group": "build"
+		}
+	]
+}
