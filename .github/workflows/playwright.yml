@@ -1,0 +1,169 @@
+name: Playwright Tests
+
+on:
+  push:
+    branches: [ main, develop ,test]
+  pull_request:
+    branches: [ main,develop ]
+  schedule:
+    # Run tests daily at 9 PM IST (3:30 PM UTC)
+    - cron: '30 15 * * *'
+  workflow_dispatch:
+    # Allow manual trigger
+
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        # Run tests on multiple Node.js versions
+        node-version: [18, 20]
+        # Run tests on different browsers including Safari (webkit)
+        browser: [chromium, firefox, webkit]
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+    
+    - name: Run Playwright tests on ${{ matrix.browser }}
+      run: npx playwright test --project=${{ matrix.browser }}
+      env:
+        CI: true
+    
+    - name: Upload test results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: playwright-report-${{ matrix.browser }}-node${{ matrix.node-version }}
+        path: |
+          playwright-report/
+          test-results/
+        retention-days: 30
+    
+    - name: Upload test report to GitHub Pages
+      if: always() && matrix.browser == 'chromium' && matrix.node-version == 20
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: playwright-report/
+
+  # Deploy test report to GitHub Pages
+  deploy-report:
+    if: always()
+    needs: test
+    runs-on: ubuntu-latest
+    
+    permissions:
+      pages: write
+      id-token: write
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+
+  # Teams notification (optional - requires TEAMS_WEBHOOK_URL secret)
+  notify:
+    if: always()
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Notify Teams on failure
+      if: failure()
+      uses: skitionek/notify-microsoft-teams@master
+      with:
+        webhook_url: ${{ secrets.TEAMS_WEBHOOK_URL }}
+        needs: ${{ toJson(needs) }}
+        job: ${{ toJson(job) }}
+        steps: ${{ toJson(steps) }}
+        dry_run: false
+        title: "🚨 Playwright Tests Failed ❌"
+        summary: "Playwright test suite has failed. Immediate attention required! Check the GitHub Actions for detailed logs and error reports."
+        theme_color: "FF0000"
+        sections: |
+          [
+            {
+              "activityTitle": "❗ Test Failure Details",
+              "activitySubtitle": "Repository: ${{ github.repository }}",
+              "facts": [
+                {
+                  "name": "🌿 Branch",
+                  "value": "${{ github.ref_name }}"
+                },
+                {
+                  "name": "📝 Commit",
+                  "value": "${{ github.sha }}"
+                },
+                {
+                  "name": "👤 Triggered by",
+                  "value": "${{ github.actor }}"
+                },
+                {
+                  "name": "🕒 Failed at",
+                  "value": "${{ github.event.head_commit.timestamp }}"
+                },
+                {
+                  "name": "🔗 View Logs",
+                  "value": "[Click here](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"
+                },
+                {
+                  "name": "🌐 Browsers Tested",
+                  "value": "Chromium, Firefox, WebKit (Safari)"
+                }
+              ]
+            }
+          ]
+    
+    - name: Notify Teams on success
+      if: success()
+      uses: skitionek/notify-microsoft-teams@master
+      with:
+        webhook_url: ${{ secrets.TEAMS_WEBHOOK_URL }}
+        needs: ${{ toJson(needs) }}
+        job: ${{ toJson(job) }}
+        steps: ${{ toJson(steps) }}
+        dry_run: false
+        title: "Playwright Tests Passed ✅"
+        summary: "All Playwright tests have passed successfully across all browsers!"
+        theme_color: "00FF00"
+        sections: |
+          [
+            {
+              "activityTitle": "Test Success Details",
+              "activitySubtitle": "Repository: ${{ github.repository }}",
+              "facts": [
+                {
+                  "name": "Branch",
+                  "value": "${{ github.ref_name }}"
+                },
+                {
+                  "name": "Commit",
+                  "value": "${{ github.sha }}"
+                },
+                {
+                  "name": "Actor",
+                  "value": "${{ github.actor }}"
+                },
+                {
+                  "name": "Browsers Tested",
+                  "value": "Chromium, Firefox, WebKit (Safari)"
+                }
+              ]
+            }
+          ]

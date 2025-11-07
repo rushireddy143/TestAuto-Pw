@@ -1,0 +1,44 @@
+name: Chrome Browser Tests
+
+on:
+  push:
+    paths:
+      - 'tests/chromebrowser.spec.ts'
+      - 'tests/test-3.spec.ts'
+  pull_request:
+    paths:
+      - 'tests/chromebrowser.spec.ts' 
+      - 'tests/test-3.spec.ts'
+  workflow_dispatch:
+
+jobs:
+  chrome-tests:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Install Chrome browser
+      run: npx playwright install chromium
+    
+    - name: Run Chrome browser tests
+      run: npx playwright test tests/chromebrowser.spec.ts tests/test-3.spec.ts --project=chromium
+    
+    - name: Upload screenshots and videos
+      if: failure()
+      uses: actions/upload-artifact@v4
+      with:
+        name: chrome-test-artifacts
+        path: |
+          test-results/
+          *.png
+        retention-days: 3
