@@ -1,0 +1,62 @@
+name: BrowserStack Sample
+
+on:
+  workflow_dispatch:
+    inputs:
+      browser:
+        description: "Browser to run (chrome, edge, firefox, webkit, chromium)"
+        required: false
+        type: choice
+        default: chrome
+        options:
+          - chrome
+          - edge
+          - firefox
+          - webkit
+          - chromium
+      url:
+        description: "Target URL to open"
+        required: false
+        type: string
+        default: https://www.example.com
+      local:
+        description: "Enable BrowserStack Local"
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  run-sample:
+    name: Run BrowserStack Sample
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
+      BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+      BROWSERSTACK_BROWSER: ${{ inputs.browser }}
+      BROWSERSTACK_URL: ${{ inputs.url }}
+      BROWSERSTACK_LOCAL: ${{ inputs.local }}
+    steps:
+      - name: Precheck secrets
+        run: |
+          if [ -z "$BROWSERSTACK_USERNAME" ] || [ -z "$BROWSERSTACK_ACCESS_KEY" ]; then
+            echo "BROWSERSTACK_USERNAME/ACCESS_KEY secrets not set." >&2
+            exit 1
+          fi
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm i -D playwright@latest
+
+      - name: Run sample
+        run: node browserstack-sample.js

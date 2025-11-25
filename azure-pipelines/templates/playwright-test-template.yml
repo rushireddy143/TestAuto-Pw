@@ -1,0 +1,66 @@
+parameters:
+- name: browser
+  type: string
+  default: 'chromium'
+
+steps:
+- task: NodeTool@0
+  displayName: 'Install Node.js'
+  inputs:
+    versionSpec: '$(NODE_VERSION)'
+    
+- task: Cache@2
+  displayName: 'Cache npm dependencies'
+  inputs:
+    key: 'npm | "$(Agent.OS)" | package-lock.json'
+    restoreKeys: |
+      npm | "$(Agent.OS)"
+    path: '$(Pipeline.Workspace)/.npm'
+    
+- script: |
+    npm ci
+  displayName: 'Install npm dependencies'
+  
+- script: |
+    npx playwright install --with-deps ${{ parameters.browser }}
+  displayName: 'Install Playwright ${{ parameters.browser }} browser'
+  
+- script: |
+    npx playwright test --project=${{ parameters.browser }} --reporter=html,junit,json
+  displayName: 'Run Playwright tests on ${{ parameters.browser }}'
+  continueOnError: true
+  env:
+    CI: true
+    
+- task: PublishTestResults@2
+  displayName: 'Publish ${{ parameters.browser }} test results'
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: 'test-results.xml'
+    testRunTitle: 'Playwright Tests - ${{ parameters.browser }}'
+    mergeTestResults: false
+  condition: always()
+  
+- task: PublishPipelineArtifact@1
+  displayName: 'Upload ${{ parameters.browser }} test artifacts'
+  inputs:
+    targetPath: '$(System.DefaultWorkingDirectory)/test-results'
+    artifact: 'test-results-${{ parameters.browser }}'
+    publishLocation: 'pipeline'
+  condition: always()
+  
+- task: PublishPipelineArtifact@1
+  displayName: 'Upload ${{ parameters.browser }} HTML report'
+  inputs:
+    targetPath: '$(System.DefaultWorkingDirectory)/playwright-report'
+    artifact: 'playwright-report-${{ parameters.browser }}'
+    publishLocation: 'pipeline'
+  condition: always()
+  
+- task: PublishPipelineArtifact@1
+  displayName: 'Upload ${{ parameters.browser }} screenshots'
+  inputs:
+    targetPath: '$(System.DefaultWorkingDirectory)/test-results'
+    artifact: 'screenshots-${{ parameters.browser }}'
+    publishLocation: 'pipeline'
+  condition: failed()

@@ -1,0 +1,171 @@
+name: Sauce Labs - Playwright Tests
+
+on:
+  push:
+    branches: [ main, develop, test ]
+  pull_request:
+    branches: [ main, develop ]
+  schedule:
+    # Run tests daily at 9 PM IST (3:30 PM UTC)
+    - cron: '30 15 * * *'
+  workflow_dispatch:
+    inputs:
+      region:
+        description: 'Sauce Labs Region'
+        required: true
+        default: 'us-west-1'
+        type: choice
+        options:
+          - us-west-1
+          - eu-central-1
+
+jobs:
+  saucelabs-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - browser: 'saucelabs-chrome-windows'
+            name: 'Chrome on Windows 11'
+          - browser: 'saucelabs-firefox-windows'
+            name: 'Firefox on Windows 11'
+          - browser: 'saucelabs-webkit-mac'
+            name: 'Safari on macOS 13'
+          - browser: 'saucelabs-edge-windows'
+            name: 'Edge on Windows 11'
+          - browser: 'saucelabs-mobile-chrome'
+            name: 'Chrome on Android (Pixel 6)'
+          - browser: 'saucelabs-mobile-safari'
+            name: 'Safari on iOS (iPhone 13)'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run Playwright tests on Sauce Labs - ${{ matrix.name }}
+      env:
+        SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+        SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+        CI: true
+      run: |
+        npx playwright test --config=playwright.saucelabs.config.ts --project=${{ matrix.browser }}
+    
+    - name: Upload test results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: saucelabs-results-${{ matrix.browser }}
+        path: |
+          playwright-report/
+          test-results/
+        retention-days: 30
+    
+    - name: Upload Sauce Labs assets
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: saucelabs-logs-${{ matrix.browser }}
+        path: |
+          test-results/**/*.png
+          test-results/**/*.webm
+        retention-days: 7
+
+  publish-results:
+    needs: saucelabs-test
+    runs-on: ubuntu-latest
+    if: always()
+    
+    steps:
+    - name: Download all artifacts
+      uses: actions/download-artifact@v4
+      
+    - name: Publish Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v2
+      if: always()
+      with:
+        files: |
+          **/test-results.xml
+        check_name: Sauce Labs Test Results
+        
+    - name: Create test summary
+      if: always()
+      run: |
+        echo "## 🧪 Sauce Labs Test Execution Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Platforms Tested:" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ Chrome on Windows 11" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ Firefox on Windows 11" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ Safari on macOS 13" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ Edge on Windows 11" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ Chrome on Android (Pixel 6)" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ Safari on iOS (iPhone 13)" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 🔗 Links:" >> $GITHUB_STEP_SUMMARY
+        echo "- [Sauce Labs Dashboard](https://app.saucelabs.com/dashboard/tests)" >> $GITHUB_STEP_SUMMARY
+        echo "- [Test Artifacts](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
+
+  notify-teams:
+    needs: saucelabs-test
+    runs-on: ubuntu-latest
+    if: always()
+    
+    steps:
+    - name: Notify Teams on completion
+      uses: skitionek/notify-microsoft-teams@master
+      with:
+        webhook_url: ${{ secrets.TEAMS_WEBHOOK_URL }}
+        needs: ${{ toJson(needs) }}
+        job: ${{ toJson(job) }}
+        dry_run: false
+        title: "${{ needs.saucelabs-test.result == 'success' && '✅' || '❌' }} Sauce Labs Tests - ${{ needs.saucelabs-test.result }}"
+        summary: "Playwright tests executed on Sauce Labs cloud platform"
+        theme_color: "${{ needs.saucelabs-test.result == 'success' && '00FF00' || 'FF0000' }}"
+        sections: |
+          [
+            {
+              "activityTitle": "🌐 Sauce Labs Test Results",
+              "activitySubtitle": "Cross-browser & Cross-platform Testing",
+              "facts": [
+                {
+                  "name": "Repository",
+                  "value": "${{ github.repository }}"
+                },
+                {
+                  "name": "Branch",
+                  "value": "${{ github.ref_name }}"
+                },
+                {
+                  "name": "Platforms",
+                  "value": "Windows 11, macOS 13, Android, iOS"
+                },
+                {
+                  "name": "Browsers",
+                  "value": "Chrome, Firefox, Safari, Edge"
+                },
+                {
+                  "name": "Triggered by",
+                  "value": "${{ github.actor }}"
+                },
+                {
+                  "name": "Dashboard",
+                  "value": "[View in Sauce Labs](https://app.saucelabs.com/dashboard/tests)"
+                },
+                {
+                  "name": "Logs",
+                  "value": "[View Workflow](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"
+                }
+              ]
+            }
+          ]

@@ -1,0 +1,170 @@
+trigger:
+  branches:
+    include:
+    - main
+    - develop
+    - test
+
+pr:
+  branches:
+    include:
+    - main
+    - develop
+
+schedules:
+- cron: "30 15 * * *"
+  displayName: Nightly Playwright Tests
+  branches:
+    include:
+    - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  NODE_VERSION: '20.x'
+
+jobs:
+- job: PlaywrightTests
+  displayName: 'Run Playwright Tests'
+  timeoutInMinutes: 60
+  
+  strategy:
+    matrix:
+      Chromium:
+        browserName: 'chromium'
+      Firefox:
+        browserName: 'firefox'
+      WebKit:
+        browserName: 'webkit'
+    maxParallel: 3
+  
+  steps:
+  - task: NodeTool@0
+    displayName: 'Install Node.js $(NODE_VERSION)'
+    inputs:
+      versionSpec: '$(NODE_VERSION)'
+  
+  - task: Cache@2
+    displayName: 'Cache npm dependencies'
+    inputs:
+      key: 'npm | "$(Agent.OS)" | package-lock.json'
+      restoreKeys: |
+        npm | "$(Agent.OS)"
+      path: '$(Pipeline.Workspace)/.npm'
+  
+  - script: |
+      npm ci
+    displayName: 'Install dependencies'
+  
+  - script: |
+      npx playwright install --with-deps $(browserName)
+    displayName: 'Install Playwright $(browserName) browser'
+  
+  - script: |
+      npx playwright test --project=$(browserName)
+    displayName: 'Run tests on $(browserName)'
+    env:
+      CI: 'true'
+    continueOnError: true
+  
+  - task: PublishTestResults@2
+    displayName: 'Publish Test Results'
+    inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '**/test-results.xml'
+      testRunTitle: 'Playwright Tests - $(browserName)'
+      mergeTestResults: false
+    condition: always()
+  
+  - task: PublishPipelineArtifact@1
+    displayName: 'Publish Test Results Artifacts'
+    inputs:
+      targetPath: '$(System.DefaultWorkingDirectory)/test-results'
+      artifact: 'test-results-$(browserName)'
+      publishLocation: 'pipeline'
+    condition: always()
+  
+  - task: PublishPipelineArtifact@1
+    displayName: 'Publish HTML Report'
+    inputs:
+      targetPath: '$(System.DefaultWorkingDirectory)/playwright-report'
+      artifact: 'playwright-report-$(browserName)'
+      publishLocation: 'pipeline'
+    condition: always()
+  
+  - task: PublishPipelineArtifact@1
+    displayName: 'Publish Screenshots on Failure'
+    inputs:
+      targetPath: '$(System.DefaultWorkingDirectory)/test-results'
+      artifact: 'screenshots-$(browserName)'
+      publishLocation: 'pipeline'
+    condition: failed()
+
+- job: NotifyTeams
+  displayName: 'Notify Microsoft Teams'
+  dependsOn: PlaywrightTests
+  condition: always()
+  
+  steps:
+  - task: PowerShell@2
+    displayName: 'Send Teams Notification'
+    inputs:
+      targetType: 'inline'
+      script: |
+        $teamsWebhook = "$(TEAMS_WEBHOOK_URL)"
+        
+        if ([string]::IsNullOrEmpty($teamsWebhook)) {
+            Write-Host "Teams webhook URL not configured. Skipping notification."
+            exit 0
+        }
+        
+        $status = "$(Agent.JobStatus)"
+        $color = if ($status -eq "Succeeded") { "00FF00" } else { "FF0000" }
+        $title = if ($status -eq "Succeeded") { "✅ Playwright Tests Passed" } else { "❌ Playwright Tests Failed" }
+        
+        $body = @{
+            "@type" = "MessageCard"
+            "@context" = "https://schema.org/extensions"
+            "summary" = "Playwright Test Results"
+            "themeColor" = $color
+            "title" = $title
+            "sections" = @(
+                @{
+                    "activityTitle" = "Azure DevOps Pipeline"
+                    "facts" = @(
+                        @{
+                            "name" = "Repository"
+                            "value" = "$(Build.Repository.Name)"
+                        },
+                        @{
+                            "name" = "Branch"
+                            "value" = "$(Build.SourceBranchName)"
+                        },
+                        @{
+                            "name" = "Build Number"
+                            "value" = "$(Build.BuildNumber)"
+                        },
+                        @{
+                            "name" = "Triggered By"
+                            "value" = "$(Build.RequestedFor)"
+                        }
+                    )
+                }
+            )
+            "potentialAction" = @(
+                @{
+                    "@type" = "OpenUri"
+                    "name" = "View Pipeline"
+                    "targets" = @(
+                        @{
+                            "os" = "default"
+                            "uri" = "$(System.TeamFoundationCollectionUri)$(System.TeamProject)/_build/results?buildId=$(Build.BuildId)"
+                        }
+                    )
+                }
+            )
+        } | ConvertTo-Json -Depth 10
+        
+        Invoke-RestMethod -Method Post -Uri $teamsWebhook -Body $body -ContentType "application/json"
+    continueOnError: true

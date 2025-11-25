@@ -1,6 +1,6 @@
 {
   "config": {
-    "configFile": "C:\\Users\\Autom\\TestAuto-Pw\\playwright.config.ts",
+    "configFile": "C:\\Users\\Autom\\TestAuto-Pw\\playwright.saucelabs.config.ts",
     "rootDir": "C:/Users/Autom/TestAuto-Pw/tests",
     "forbidOnly": false,
     "fullyParallel": true,
@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 5
     },
     "preserveOutput": "always",
     "reporter": [
@@ -30,6 +30,10 @@
         {
           "outputFile": "test-results.xml"
         }
+      ],
+      [
+        "list",
+        null
       ]
     ],
     "reportSlowTests": {
@@ -41,12 +45,12 @@
       {
         "outputDir": "C:/Users/Autom/TestAuto-Pw/test-results",
         "repeatEach": 1,
-        "retries": 0,
+        "retries": 1,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 5
         },
-        "id": "chromium",
-        "name": "chromium",
+        "id": "saucelabs-chrome-windows",
+        "name": "saucelabs-chrome-windows",
         "testDir": "C:/Users/Autom/TestAuto-Pw/tests",
         "testIgnore": [],
         "testMatch": [
@@ -57,12 +61,12 @@
       {
         "outputDir": "C:/Users/Autom/TestAuto-Pw/test-results",
         "repeatEach": 1,
-        "retries": 0,
+        "retries": 1,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 5
         },
-        "id": "firefox",
-        "name": "firefox",
+        "id": "saucelabs-firefox-windows",
+        "name": "saucelabs-firefox-windows",
         "testDir": "C:/Users/Autom/TestAuto-Pw/tests",
         "testIgnore": [],
         "testMatch": [
@@ -73,12 +77,12 @@
       {
         "outputDir": "C:/Users/Autom/TestAuto-Pw/test-results",
         "repeatEach": 1,
-        "retries": 0,
+        "retries": 1,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 5
         },
-        "id": "webkit",
-        "name": "webkit",
+        "id": "saucelabs-webkit-mac",
+        "name": "saucelabs-webkit-mac",
         "testDir": "C:/Users/Autom/TestAuto-Pw/tests",
         "testIgnore": [],
         "testMatch": [
@@ -89,12 +93,12 @@
       {
         "outputDir": "C:/Users/Autom/TestAuto-Pw/test-results",
         "repeatEach": 1,
-        "retries": 0,
+        "retries": 1,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 5
         },
-        "id": "mobile-chrome",
-        "name": "mobile-chrome",
+        "id": "saucelabs-edge-windows",
+        "name": "saucelabs-edge-windows",
         "testDir": "C:/Users/Autom/TestAuto-Pw/tests",
         "testIgnore": [],
         "testMatch": [
@@ -105,12 +109,28 @@
       {
         "outputDir": "C:/Users/Autom/TestAuto-Pw/test-results",
         "repeatEach": 1,
-        "retries": 0,
+        "retries": 1,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 5
         },
-        "id": "mobile-safari",
-        "name": "mobile-safari",
+        "id": "saucelabs-mobile-chrome",
+        "name": "saucelabs-mobile-chrome",
+        "testDir": "C:/Users/Autom/TestAuto-Pw/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/Autom/TestAuto-Pw/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 5
+        },
+        "id": "saucelabs-mobile-safari",
+        "name": "saucelabs-mobile-safari",
         "testDir": "C:/Users/Autom/TestAuto-Pw/tests",
         "testIgnore": [],
         "testMatch": [
@@ -123,10 +143,1185 @@
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
     "version": "1.56.1",
-    "workers": 6,
+    "workers": 5,
     "webServer": null
   },
   "suites": [
+    {
+      "title": "api.spec.ts",
+      "file": "api.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "API Tests",
+          "file": "api.spec.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should get all users",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "saucelabs-chrome-windows",
+                  "projectName": "saucelabs-chrome-windows",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 830,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-18T01:01:36.298Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1ea1b1599cbc08f16936-42b44cb2b11c2edae65f",
+              "file": "api.spec.ts",
+              "line": 11,
+              "column": 7
+            },
+            {
+              "title": "should get specific user by ID",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "saucelabs-chrome-windows",
+                  "projectName": "saucelabs-chrome-windows",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 169,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-18T01:01:37.218Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1ea1b1599cbc08f16936-78e8954e720cdaab467b",
+              "file": "api.spec.ts",
+              "line": 27,
+              "column": 7
+            },
+            {
+              "title": "should create new user",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "saucelabs-chrome-windows",
+                  "projectName": "saucelabs-chrome-windows",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 871,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-18T01:01:36.362Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1ea1b1599cbc08f16936-10f337122ed1fd86660f",
+              "file": "api.spec.ts",
+              "line": 39,
+              "column": 7
+            },
+            {
+              "title": "should update user",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "saucelabs-chrome-windows",
+                  "projectName": "saucelabs-chrome-windows",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 675,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-18T01:01:37.326Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1ea1b1599cbc08f16936-9ff408a17ff36c3285b8",
+              "file": "api.spec.ts",
+              "line": 58,
+              "column": 7
+            },
+            {
+              "title": "should delete user",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "saucelabs-chrome-windows",
+                  "projectName": "saucelabs-chrome-windows",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1021,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-18T01:01:36.507Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1ea1b1599cbc08f16936-d0fd1f4d2eb93e8a8028",
+              "file": "api.spec.ts",
+              "line": 76,
+              "column": 7
+            },
+            {
+              "title": "should handle 404 for non-existent user",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "saucelabs-chrome-windows",
+                  "projectName": "saucelabs-chrome-windows",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 99,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-18T01:01:37.607Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1ea1b1599cbc08f16936-93ddac0746ea7f0dc540",
+              "file": "api.spec.ts",
+              "line": 83,
+              "column": 7
+            },
+            {
+              "title": "should get user posts",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "saucelabs-chrome-windows",
+                  "projectName": "saucelabs-chrome-windows",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 1279,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-18T01:01:36.385Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1ea1b1599cbc08f16936-d047890c9bdb32348768",
+              "file": "api.spec.ts",
+              "line": 88,
+              "column": 7
+            },
+            {
+              "title": "should validate response headers",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "saucelabs-chrome-windows",
+                  "projectName": "saucelabs-chrome-windows",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 110,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-18T01:01:37.772Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1ea1b1599cbc08f16936-33c32b314582c5a12cde",
+              "file": "api.spec.ts",
+              "line": 105,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "chromebrowser.spec.ts",
+      "file": "chromebrowser.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "has title",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "saucelabs-chrome-windows",
+              "projectName": "saucelabs-chrome-windows",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 4,
+                  "status": "failed",
+                  "duration": 7,
+                  "error": {
+                    "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright code=1006 reason=\u001b[22m\n",
+                    "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright code=1006 reason=\u001b[22m\n"
+                  },
+                  "errors": [
+                    {
+                      "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright code=1006 reason=\u001b[22m\n"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-11-18T01:01:36.465Z",
+                  "annotations": [],
+                  "attachments": []
+                },
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 4,
+                  "status": "failed",
+                  "duration": 8,
+                  "error": {
+                    "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n",
+                    "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                  },
+                  "errors": [
+                    {
+                      "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2025-11-18T01:06:39.340Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\Autom\\TestAuto-Pw\\test-results\\chromebrowser-has-title-saucelabs-chrome-windows-retry1\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6b514a377607277c5479-3806a216ee6e60319ef4",
+          "file": "chromebrowser.spec.ts",
+          "line": 3,
+          "column": 5
+        },
+        {
+          "title": "get started link",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "saucelabs-chrome-windows",
+              "projectName": "saucelabs-chrome-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1,
+                  "error": {
+                    "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright code=1006 reason=\u001b[22m\n",
+                    "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright code=1006 reason=\u001b[22m\n"
+                  },
+                  "errors": [
+                    {
+                      "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright code=1006 reason=\u001b[22m\n"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-11-18T01:01:37.422Z",
+                  "annotations": [],
+                  "attachments": []
+                },
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 8,
+                  "error": {
+                    "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n",
+                    "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                  },
+                  "errors": [
+                    {
+                      "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2025-11-18T01:06:40.421Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\Autom\\TestAuto-Pw\\test-results\\chromebrowser-get-started-link-saucelabs-chrome-windows-retry1\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6b514a377607277c5479-dd9730c186de494578b6",
+          "file": "chromebrowser.spec.ts",
+          "line": 10,
+          "column": 5
+        },
+        {
+          "title": "verify the  title of the application",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "saucelabs-chrome-windows",
+              "projectName": "saucelabs-chrome-windows",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "failed",
+                  "duration": 2,
+                  "error": {
+                    "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright code=1006 reason=\u001b[22m\n",
+                    "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright code=1006 reason=\u001b[22m\n"
+                  },
+                  "errors": [
+                    {
+                      "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright code=1006 reason=\u001b[22m\n"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-11-18T01:01:37.758Z",
+                  "annotations": [],
+                  "attachments": []
+                },
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 2,
+                  "status": "failed",
+                  "duration": 10,
+                  "error": {
+                    "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n",
+                    "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                  },
+                  "errors": [
+                    {
+                      "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2025-11-18T01:06:40.795Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\Autom\\TestAuto-Pw\\test-results\\chromebrowser-verify-the-title-of-the-application-saucelabs-chrome-windows-retry1\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6b514a377607277c5479-b563b1980657bdf4cd1c",
+          "file": "chromebrowser.spec.ts",
+          "line": 20,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "homepage.spec.ts",
+      "file": "homepage.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Homepage Tests",
+          "file": "homepage.spec.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should load homepage successfully",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "saucelabs-chrome-windows",
+                  "projectName": "saucelabs-chrome-windows",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 2,
+                      "error": {
+                        "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright code=1006 reason=\u001b[22m\n",
+                        "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright code=1006 reason=\u001b[22m\n"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright code=1006 reason=\u001b[22m\n"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-18T01:01:37.943Z",
+                      "annotations": [],
+                      "attachments": []
+                    },
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 9,
+                      "error": {
+                        "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n",
+                        "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2025-11-18T01:06:41.030Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\Autom\\TestAuto-Pw\\test-results\\homepage-Homepage-Tests-should-load-homepage-successfully-saucelabs-chrome-windows-retry1\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "84e7eb052e8cbae1c9f0-d8d1354adf2c04b9c8c9",
+              "file": "homepage.spec.ts",
+              "line": 9,
+              "column": 7
+            },
+            {
+              "title": "should display navigation menu",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "saucelabs-chrome-windows",
+                  "projectName": "saucelabs-chrome-windows",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 2,
+                      "error": {
+                        "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright code=1006 reason=\u001b[22m\n",
+                        "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright code=1006 reason=\u001b[22m\n"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright code=1006 reason=\u001b[22m\n"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-18T01:01:38.060Z",
+                      "annotations": [],
+                      "attachments": []
+                    },
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 7,
+                      "error": {
+                        "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n",
+                        "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2025-11-18T01:06:41.122Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\Autom\\TestAuto-Pw\\test-results\\homepage-Homepage-Tests-should-display-navigation-menu-saucelabs-chrome-windows-retry1\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "84e7eb052e8cbae1c9f0-7c307e2990057d49aa46",
+              "file": "homepage.spec.ts",
+              "line": 19,
+              "column": 7
+            },
+            {
+              "title": "should perform search functionality",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "saucelabs-chrome-windows",
+                  "projectName": "saucelabs-chrome-windows",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 4,
+                      "status": "failed",
+                      "duration": 11,
+                      "error": {
+                        "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n",
+                        "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-18T01:11:43.685Z",
+                      "annotations": [],
+                      "attachments": []
+                    },
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 4,
+                      "status": "failed",
+                      "duration": 9,
+                      "error": {
+                        "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n",
+                        "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2025-11-18T01:16:47.580Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\Autom\\TestAuto-Pw\\test-results\\homepage-Homepage-Tests-should-perform-search-functionality-saucelabs-chrome-windows-retry1\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "84e7eb052e8cbae1c9f0-959246a35064c994a68a",
+              "file": "homepage.spec.ts",
+              "line": 29,
+              "column": 7
+            },
+            {
+              "title": "should navigate to getting started page",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "saucelabs-chrome-windows",
+                  "projectName": "saucelabs-chrome-windows",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8,
+                      "error": {
+                        "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n",
+                        "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-18T01:11:44.948Z",
+                      "annotations": [],
+                      "attachments": []
+                    },
+                    {
+                      "workerIndex": 16,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8,
+                      "error": {
+                        "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n",
+                        "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2025-11-18T01:16:48.463Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\Autom\\TestAuto-Pw\\test-results\\homepage-Homepage-Tests-sh-d6845-ate-to-getting-started-page-saucelabs-chrome-windows-retry1\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "84e7eb052e8cbae1c9f0-5fbf4a7bd81662f2ce6b",
+              "file": "homepage.spec.ts",
+              "line": 46,
+              "column": 7
+            },
+            {
+              "title": "should handle mobile viewport",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "saucelabs-chrome-windows",
+                  "projectName": "saucelabs-chrome-windows",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 12,
+                      "error": {
+                        "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n",
+                        "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-18T01:11:45.222Z",
+                      "annotations": [],
+                      "attachments": []
+                    },
+                    {
+                      "workerIndex": 17,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 7,
+                      "error": {
+                        "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n",
+                        "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2025-11-18T01:16:48.767Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\Autom\\TestAuto-Pw\\test-results\\homepage-Homepage-Tests-should-handle-mobile-viewport-saucelabs-chrome-windows-retry1\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "84e7eb052e8cbae1c9f0-3cd5c58938906b42133e",
+              "file": "homepage.spec.ts",
+              "line": 56,
+              "column": 7
+            },
+            {
+              "title": "should take screenshot for visual testing",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "saucelabs-chrome-windows",
+                  "projectName": "saucelabs-chrome-windows",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 10,
+                      "error": {
+                        "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n",
+                        "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-18T01:11:45.521Z",
+                      "annotations": [],
+                      "attachments": []
+                    },
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 8,
+                      "error": {
+                        "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n",
+                        "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2025-11-18T01:16:49.045Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\Autom\\TestAuto-Pw\\test-results\\homepage-Homepage-Tests-sh-b8d97-reenshot-for-visual-testing-saucelabs-chrome-windows-retry1\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "84e7eb052e8cbae1c9f0-4fb9dcbd79e33494f195",
+              "file": "homepage.spec.ts",
+              "line": 76,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "seed.spec.ts",
+      "file": "seed.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Test group",
+          "file": "seed.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "seed",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "saucelabs-chrome-windows",
+                  "projectName": "saucelabs-chrome-windows",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 9,
+                      "error": {
+                        "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n",
+                        "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-18T01:11:45.540Z",
+                      "annotations": [],
+                      "attachments": []
+                    },
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 8,
+                      "error": {
+                        "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n",
+                        "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2025-11-18T01:16:49.033Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\Autom\\TestAuto-Pw\\test-results\\seed-Test-group-seed-saucelabs-chrome-windows-retry1\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "11ceb7af692008938f3b-fd8855f30f5992ce8142",
+              "file": "seed.spec.ts",
+              "line": 4,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "test-1.spec.ts",
+      "file": "test-1.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "test",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "saucelabs-chrome-windows",
+              "projectName": "saucelabs-chrome-windows",
+              "results": [
+                {
+                  "workerIndex": 20,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 9,
+                  "error": {
+                    "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n",
+                    "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                  },
+                  "errors": [
+                    {
+                      "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-11-18T01:21:52.297Z",
+                  "annotations": [],
+                  "attachments": []
+                },
+                {
+                  "workerIndex": 24,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 14,
+                  "error": {
+                    "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n",
+                    "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                  },
+                  "errors": [
+                    {
+                      "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2025-11-18T01:26:55.927Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\Autom\\TestAuto-Pw\\test-results\\test-1-test-saucelabs-chrome-windows-retry1\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "492d4a3e7e76c4aacf4a-26bad580654a9a15800e",
+          "file": "test-1.spec.ts",
+          "line": 3,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "test-2.spec.ts",
+      "file": "test-2.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "test",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "saucelabs-chrome-windows",
+              "projectName": "saucelabs-chrome-windows",
+              "results": [
+                {
+                  "workerIndex": 21,
+                  "parallelIndex": 4,
+                  "status": "failed",
+                  "duration": 13,
+                  "error": {
+                    "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n",
+                    "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                  },
+                  "errors": [
+                    {
+                      "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-11-18T01:21:52.295Z",
+                  "annotations": [],
+                  "attachments": []
+                },
+                {
+                  "workerIndex": 25,
+                  "parallelIndex": 2,
+                  "status": "failed",
+                  "duration": 17,
+                  "error": {
+                    "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n",
+                    "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                  },
+                  "errors": [
+                    {
+                      "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2025-11-18T01:26:55.927Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\Autom\\TestAuto-Pw\\test-results\\test-2-test-saucelabs-chrome-windows-retry1\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "b0639a757ff76b21cdba-1824c091e9e95d112685",
+          "file": "test-2.spec.ts",
+          "line": 3,
+          "column": 5
+        }
+      ]
+    },
     {
       "title": "test-3.spec.ts",
       "file": "test-3.spec.ts",
@@ -142,40 +1337,69 @@
           "specs": [
             {
               "title": "should successfully fill out the registration form with valid user data",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "saucelabs-chrome-windows",
+                  "projectName": "saucelabs-chrome-windows",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 8980,
-                      "errors": [],
+                      "workerIndex": 22,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 8,
+                      "error": {
+                        "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n",
+                        "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-07T01:28:45.579Z",
+                      "startTime": "2025-11-18T01:21:52.347Z",
+                      "annotations": [],
+                      "attachments": []
+                    },
+                    {
+                      "workerIndex": 23,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 10,
+                      "error": {
+                        "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n",
+                        "stack": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\nCall log:\n\u001b[2m  - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright\u001b[22m\n\u001b[2m  - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found\u001b[22m\n\u001b[2m  - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established\u001b[22m\n\u001b[2m  - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=\u001b[22m\n"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2025-11-18T01:26:55.930Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "C:\\Users\\Autom\\TestAuto-Pw\\test-results\\test-3-Facebook-Registrati-37c23-n-form-with-valid-user-data-chromium\\trace.zip"
+                          "path": "C:\\Users\\Autom\\TestAuto-Pw\\test-results\\test-3-Facebook-Registrati-37c23-n-form-with-valid-user-data-saucelabs-chrome-windows-retry1\\trace.zip"
                         }
                       ]
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
-              "id": "4b583dfcc6c9ec3b088b-2d8e6109f2d92571758b",
+              "id": "4b583dfcc6c9ec3b088b-d09cc79812edc9859840",
               "file": "test-3.spec.ts",
               "line": 4,
               "column": 7
@@ -187,11 +1411,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-11-07T01:28:42.171Z",
-    "duration": 14825.229,
-    "expected": 1,
+    "startTime": "2025-11-18T01:01:34.061Z",
+    "duration": 1823314.5480000002,
+    "expected": 8,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 13,
     "flaky": 0
   }
 }

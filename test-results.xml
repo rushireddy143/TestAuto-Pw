@@ -1,9 +1,537 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="14.825229">
-<testsuite name="test-3.spec.ts" timestamp="2025-11-07T01:28:43.887Z" hostname="chromium" tests="1" failures="0" skipped="0" time="8.98" errors="0">
-<testcase name="Facebook Registration Form › should successfully fill out the registration form with valid user data" classname="test-3.spec.ts" time="8.98">
+<testsuites id="" name="" tests="21" failures="13" skipped="0" errors="0" time="1823.3145480000003">
+<testsuite name="api.spec.ts" timestamp="2025-11-18T01:01:34.131Z" hostname="saucelabs-chrome-windows" tests="8" failures="0" skipped="0" time="5.054" errors="0">
+<testcase name="API Tests › should get all users" classname="api.spec.ts" time="0.83">
+</testcase>
+<testcase name="API Tests › should get specific user by ID" classname="api.spec.ts" time="0.169">
+</testcase>
+<testcase name="API Tests › should create new user" classname="api.spec.ts" time="0.871">
+</testcase>
+<testcase name="API Tests › should update user" classname="api.spec.ts" time="0.675">
+</testcase>
+<testcase name="API Tests › should delete user" classname="api.spec.ts" time="1.021">
+</testcase>
+<testcase name="API Tests › should handle 404 for non-existent user" classname="api.spec.ts" time="0.099">
+</testcase>
+<testcase name="API Tests › should get user posts" classname="api.spec.ts" time="1.279">
+</testcase>
+<testcase name="API Tests › should validate response headers" classname="api.spec.ts" time="0.11">
+</testcase>
+</testsuite>
+<testsuite name="chromebrowser.spec.ts" timestamp="2025-11-18T01:01:34.131Z" hostname="saucelabs-chrome-windows" tests="3" failures="3" skipped="0" time="0.036" errors="0">
+<testcase name="has title" classname="chromebrowser.spec.ts" time="0.015">
+<failure message="chromebrowser.spec.ts:3:5 has title" type="FAILURE">
+<![CDATA[  [saucelabs-chrome-windows] › chromebrowser.spec.ts:3:5 › has title ───────────────────────────────
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright code=1006 reason=
+
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=
+
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\chromebrowser-has-title-saucelabs-chrome-windows-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\chromebrowser-has-title-saucelabs-chrome-windows-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
 <system-out>
 <![CDATA[
-[[ATTACHMENT|test-results\test-3-Facebook-Registrati-37c23-n-form-with-valid-user-data-chromium\trace.zip]]
+[[ATTACHMENT|test-results\chromebrowser-has-title-saucelabs-chrome-windows-retry1\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="get started link" classname="chromebrowser.spec.ts" time="0.009">
+<failure message="chromebrowser.spec.ts:10:5 get started link" type="FAILURE">
+<![CDATA[  [saucelabs-chrome-windows] › chromebrowser.spec.ts:10:5 › get started link ───────────────────────
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright code=1006 reason=
+
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=
+
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\chromebrowser-get-started-link-saucelabs-chrome-windows-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\chromebrowser-get-started-link-saucelabs-chrome-windows-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\chromebrowser-get-started-link-saucelabs-chrome-windows-retry1\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="verify the  title of the application" classname="chromebrowser.spec.ts" time="0.012">
+<failure message="chromebrowser.spec.ts:20:5 verify the  title of the application" type="FAILURE">
+<![CDATA[  [saucelabs-chrome-windows] › chromebrowser.spec.ts:20:5 › verify the  title of the application ───
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright code=1006 reason=
+
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=
+
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\chromebrowser-verify-the-title-of-the-application-saucelabs-chrome-windows-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\chromebrowser-verify-the-title-of-the-application-saucelabs-chrome-windows-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\chromebrowser-verify-the-title-of-the-application-saucelabs-chrome-windows-retry1\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="homepage.spec.ts" timestamp="2025-11-18T01:01:34.131Z" hostname="saucelabs-chrome-windows" tests="6" failures="6" skipped="0" time="0.093" errors="0">
+<testcase name="Homepage Tests › should load homepage successfully" classname="homepage.spec.ts" time="0.011">
+<failure message="homepage.spec.ts:9:7 should load homepage successfully" type="FAILURE">
+<![CDATA[  [saucelabs-chrome-windows] › homepage.spec.ts:9:7 › Homepage Tests › should load homepage successfully 
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright code=1006 reason=
+
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=
+
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-Tests-should-load-homepage-successfully-saucelabs-chrome-windows-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\homepage-Homepage-Tests-should-load-homepage-successfully-saucelabs-chrome-windows-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\homepage-Homepage-Tests-should-load-homepage-successfully-saucelabs-chrome-windows-retry1\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Homepage Tests › should display navigation menu" classname="homepage.spec.ts" time="0.009">
+<failure message="homepage.spec.ts:19:7 should display navigation menu" type="FAILURE">
+<![CDATA[  [saucelabs-chrome-windows] › homepage.spec.ts:19:7 › Homepage Tests › should display navigation menu 
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/playwright code=1006 reason=
+
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=
+
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-Tests-should-display-navigation-menu-saucelabs-chrome-windows-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\homepage-Homepage-Tests-should-display-navigation-menu-saucelabs-chrome-windows-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\homepage-Homepage-Tests-should-display-navigation-menu-saucelabs-chrome-windows-retry1\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Homepage Tests › should perform search functionality" classname="homepage.spec.ts" time="0.02">
+<failure message="homepage.spec.ts:29:7 should perform search functionality" type="FAILURE">
+<![CDATA[  [saucelabs-chrome-windows] › homepage.spec.ts:29:7 › Homepage Tests › should perform search functionality 
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=
+
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=
+
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-Tests-should-perform-search-functionality-saucelabs-chrome-windows-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\homepage-Homepage-Tests-should-perform-search-functionality-saucelabs-chrome-windows-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\homepage-Homepage-Tests-should-perform-search-functionality-saucelabs-chrome-windows-retry1\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Homepage Tests › should navigate to getting started page" classname="homepage.spec.ts" time="0.016">
+<failure message="homepage.spec.ts:46:7 should navigate to getting started page" type="FAILURE">
+<![CDATA[  [saucelabs-chrome-windows] › homepage.spec.ts:46:7 › Homepage Tests › should navigate to getting started page 
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=
+
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=
+
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-Tests-sh-d6845-ate-to-getting-started-page-saucelabs-chrome-windows-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\homepage-Homepage-Tests-sh-d6845-ate-to-getting-started-page-saucelabs-chrome-windows-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\homepage-Homepage-Tests-sh-d6845-ate-to-getting-started-page-saucelabs-chrome-windows-retry1\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Homepage Tests › should handle mobile viewport" classname="homepage.spec.ts" time="0.019">
+<failure message="homepage.spec.ts:56:7 should handle mobile viewport" type="FAILURE">
+<![CDATA[  [saucelabs-chrome-windows] › homepage.spec.ts:56:7 › Homepage Tests › should handle mobile viewport 
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=
+
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=
+
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-Tests-should-handle-mobile-viewport-saucelabs-chrome-windows-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\homepage-Homepage-Tests-should-handle-mobile-viewport-saucelabs-chrome-windows-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\homepage-Homepage-Tests-should-handle-mobile-viewport-saucelabs-chrome-windows-retry1\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Homepage Tests › should take screenshot for visual testing" classname="homepage.spec.ts" time="0.018">
+<failure message="homepage.spec.ts:76:7 should take screenshot for visual testing" type="FAILURE">
+<![CDATA[  [saucelabs-chrome-windows] › homepage.spec.ts:76:7 › Homepage Tests › should take screenshot for visual testing 
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=
+
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=
+
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-Tests-sh-b8d97-reenshot-for-visual-testing-saucelabs-chrome-windows-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\homepage-Homepage-Tests-sh-b8d97-reenshot-for-visual-testing-saucelabs-chrome-windows-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\homepage-Homepage-Tests-sh-b8d97-reenshot-for-visual-testing-saucelabs-chrome-windows-retry1\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="seed.spec.ts" timestamp="2025-11-18T01:01:34.131Z" hostname="saucelabs-chrome-windows" tests="1" failures="1" skipped="0" time="0.017" errors="0">
+<testcase name="Test group › seed" classname="seed.spec.ts" time="0.017">
+<failure message="seed.spec.ts:4:7 seed" type="FAILURE">
+<![CDATA[  [saucelabs-chrome-windows] › seed.spec.ts:4:7 › Test group › seed ────────────────────────────────
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=
+
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=
+
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\seed-Test-group-seed-saucelabs-chrome-windows-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\seed-Test-group-seed-saucelabs-chrome-windows-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\seed-Test-group-seed-saucelabs-chrome-windows-retry1\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="test-1.spec.ts" timestamp="2025-11-18T01:01:34.131Z" hostname="saucelabs-chrome-windows" tests="1" failures="1" skipped="0" time="0.023" errors="0">
+<testcase name="test" classname="test-1.spec.ts" time="0.023">
+<failure message="test-1.spec.ts:3:5 test" type="FAILURE">
+<![CDATA[  [saucelabs-chrome-windows] › test-1.spec.ts:3:5 › test ───────────────────────────────────────────
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=
+
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=
+
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\test-1-test-saucelabs-chrome-windows-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\test-1-test-saucelabs-chrome-windows-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\test-1-test-saucelabs-chrome-windows-retry1\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="test-2.spec.ts" timestamp="2025-11-18T01:01:34.131Z" hostname="saucelabs-chrome-windows" tests="1" failures="1" skipped="0" time="0.03" errors="0">
+<testcase name="test" classname="test-2.spec.ts" time="0.03">
+<failure message="test-2.spec.ts:3:5 test" type="FAILURE">
+<![CDATA[  [saucelabs-chrome-windows] › test-2.spec.ts:3:5 › test ───────────────────────────────────────────
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=
+
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=
+
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\test-2-test-saucelabs-chrome-windows-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\test-2-test-saucelabs-chrome-windows-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\test-2-test-saucelabs-chrome-windows-retry1\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="test-3.spec.ts" timestamp="2025-11-18T01:01:34.131Z" hostname="saucelabs-chrome-windows" tests="1" failures="1" skipped="0" time="0.018" errors="0">
+<testcase name="Facebook Registration Form › should successfully fill out the registration form with valid user data" classname="test-3.spec.ts" time="0.018">
+<failure message="test-3.spec.ts:4:7 should successfully fill out the registration form with valid user data" type="FAILURE">
+<![CDATA[  [saucelabs-chrome-windows] › test-3.spec.ts:4:7 › Facebook Registration Form › should successfully fill out the registration form with valid user data 
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=
+
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.connect: WebSocket error: wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+    Call log:
+      - <ws connecting> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright
+      - <ws unexpected response> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright 404 Not Found
+      - <ws error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright error WebSocket was closed before the connection was established
+      - <ws connect error> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright WebSocket was closed before the connection was established
+      - <ws disconnected> wss://oauth-lrushikeswarreddy-8d501:e47b53ec-abff-4a92-b9e7-8bf2e2b8cf48@ondemand.us-west-1.saucelabs.com/v1/playwright code=1006 reason=
+
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\test-3-Facebook-Registrati-37c23-n-form-with-valid-user-data-saucelabs-chrome-windows-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\test-3-Facebook-Registrati-37c23-n-form-with-valid-user-data-saucelabs-chrome-windows-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\test-3-Facebook-Registrati-37c23-n-form-with-valid-user-data-saucelabs-chrome-windows-retry1\trace.zip]]
 ]]>
 </system-out>
 </testcase>

@@ -14,7 +14,14 @@
     "test:webkit": "playwright test --project=webkit",
     "test:mobile": "playwright test --project=mobile-chrome",
     "codegen": "playwright codegen",
-    "install:browsers": "playwright install"
+    "install:browsers": "playwright install",
+    "test:saucelabs": "playwright test --config=playwright.saucelabs.config.ts",
+    "test:saucelabs:chrome": "playwright test --config=playwright.saucelabs.config.ts --project=saucelabs-chrome-windows",
+    "test:saucelabs:firefox": "playwright test --config=playwright.saucelabs.config.ts --project=saucelabs-firefox-windows",
+    "test:saucelabs:safari": "playwright test --config=playwright.saucelabs.config.ts --project=saucelabs-webkit-mac",
+    "test:saucelabs:edge": "playwright test --config=playwright.saucelabs.config.ts --project=saucelabs-edge-windows",
+    "test:saucelabs:android": "playwright test --config=playwright.saucelabs.config.ts --project=saucelabs-mobile-chrome",
+    "test:saucelabs:ios": "playwright test --config=playwright.saucelabs.config.ts --project=saucelabs-mobile-safari"
   },
   "keywords": [
     "playwright",
